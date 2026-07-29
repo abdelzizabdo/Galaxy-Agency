@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#hero" className="flex items-center gap-2 group">
             <Film className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
-            <span className="font-heading font-bold text-lg tracking-tight text-[#f2f2f2]"> Abdelaziz <span className="text-primary">Hussien</span>
+            <span className="font-heading font-bold text-lg tracking-tight text-[#f2f2f2]"> Galaxy <span className="text-primary">Agency</span>
             </span>
           </a>
 

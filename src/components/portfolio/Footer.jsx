@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <Film className="w-5 h-5 text-primary" />
             <span className="font-heading font-bold text-sm text-foreground">
-              Abdelaziz <span className="text-primary">Hussien</span>
+              Galaxy <span className="text-primary">Agency</span>
             </span>
           </div>
 

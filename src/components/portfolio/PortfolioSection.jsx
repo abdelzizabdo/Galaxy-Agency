@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollReveal } from './useScrollReveal';
 import { Play, ExternalLink, X } from 'lucide-react';
+
 
 const categories = ['All', 'Medical', 'Motion Graphic', 'Educational Video', 'Commercial', 'Social Media', 'Brand'];
 
@@ -16,16 +17,16 @@ const projects = [
     video: "/804- Abx - Dr.Sara - Nma Life -هوس مشروبات الطاقة وتأثيرها على الأسنان  Aren(1).mp4"
   },
   {
-    id: 8,
+    id: 2,
     title: 'Ezr3ly',
     category: 'Brand',
     description: 'Vertical format music video optimized for Instagram Reels with trend-driven editing and effects.',
     tags: ['Reels', 'Effects', 'Music Sync', 'Storyboarding & Scripting', 'Camera Operation', 'Lighting & Audio Setup', 'Direction', 'Color Grading', 'Video Editing'],
     thumbnail: '/Ezr3ly1.mp4#t=1',
-    video: 'Ezr3ly1.mp4'
+    video: 'Ezr3ly1.mp4' 
   },
   {
-    id: 2,
+    id: 3,
     title: 'منع طلاء الأظافر ',
     category: 'Medical',
     description: 'Transforming medical raw footage into a highly professional visual experience. This project balances precise medical content with engaging post-production techniques. I integrated explanatory animations, relevant imagery, and smooth, innovative transitions, combined with cinematic color correction to deliver a polished, clear, and impactful healthcare video.',
@@ -34,7 +35,7 @@ const projects = [
     video: '/830- ABX - Dr.Farida - NMA LIFE - منع طلاء الأظافر AR-EN.mp4'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Animated video for Swapop',
     category: 'Motion Graphic',
     description: 'An animated App Explainer video created for Swapop, a US-based company. This project showcases the application’s core features and user interface through dynamic and engaging motion design. I transformed complex user flows into a seamless, visually captivating experience, integrating smart transitions and slick animations that elevate the brands digital identity to meet international standards.',
@@ -43,7 +44,7 @@ const projects = [
     video: '/animation.mp4'
   },
   {
-    id: 4,
+    id: 5,
     title: 'video produced for (MCIT)',
     category: 'Educational Video',
     description: 'An educational and awareness video produced for the Egyptian Ministry of Communications and Information Technology (MCIT). The project aims to simplify digital and educational concepts into an engaging visual format. I integrated motion graphics, explanatory animations, and seamless transitions to ensure a clear information flow while adhering to the Ministrys official visual identity, delivering high-quality, impactful educational content.',
@@ -52,7 +53,7 @@ const projects = [
     video: '/a_course_in_cooperation_with_the_ministry_of_communications_and_information_technology_v1 (1080p).mp4'
   },
   {
-    id: 5,
+    id: 6,
     title: 'bet el gomla',
     category: 'Commercial',
     description: 'A promotional and marketing video created for Bayt El Gomla. The project highlights the shopping experience, product variety, and competitive pricing using a high-energy, fast-paced visual style. I implemented dynamic transitions, vibrant color correction to emphasize product quality, and engaging visual/audio effects designed to drive customer engagement and boost sales.',
@@ -61,7 +62,7 @@ const projects = [
     video: '/bet el gomla.mp4'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Shot Egypt',
     category: 'Social Media',
     description: 'Horizontal format music video optimized for Instagram Reels with trend-driven editing and effects.',
@@ -70,7 +71,7 @@ const projects = [
     video: '/ShotEgypt.mp4'
   },
   {
-    id: 7,
+    id: 8,
     title: '2me',
     category: 'Social Media',
     description: 'Vertical format music video optimized for Instagram Reels with trend-driven editing and effects.',
@@ -78,7 +79,24 @@ const projects = [
     thumbnail: '/2Me.mp4#t=1',
     video: '/2Me.mp4'
   },
-  
+  {
+    id: 9,
+    title: 'Midea',
+    category: 'Social Media',
+    description: 'full dau for midea company.',
+    tags: ['Reels', 'Effects', 'Music Sync'],
+    thumbnail: '/Midea.mp4#t=1',
+    video: '/Midea.mp4'
+  },
+  {
+    id: 10,
+    title: 'Shata',
+    category: 'Social Media',
+    description: 'shata company in house of furinte.',
+    tags: ['Reels', 'Effects', 'Music Sync'],
+    thumbnail: '/Shata.mp4#t=1',
+    video: '/Shata.mp4'
+  },
 ];
 
 function ProjectCard({ project, onClick }) {
@@ -159,6 +177,14 @@ export default function PortfolioSection() {
   const filtered = activeFilter === 'All'
     ? projects
     : projects.filter((p) => p.category === activeFilter);
+    useEffect(() => {
+  const videos = document.querySelectorAll("video");
+
+  videos.forEach((video) => {
+    video.preload = "auto";
+    video.playsInline = true;
+  });
+}, []);
 
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative">

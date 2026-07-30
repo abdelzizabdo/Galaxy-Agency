@@ -13,7 +13,7 @@ const projects = [
     category: 'Medical',
     description: 'Transforming medical raw footage into a highly professional visual experience. This project balances precise medical content with engaging post-production techniques. I integrated explanatory animations, relevant imagery, and smooth, innovative transitions, combined with cinematic color correction to deliver a polished, clear, and impactful healthcare video.',
     tags: ['Color Grading', 'Transitions', 'Sound Design', 'Sound effect'],
-    thumbnail: '/804- Abx - Dr.Sara - Nma Life -هوس مشروبات الطاقة وتأثيرها على الأسنان  Aren(1).mp4#t=1',
+    thumbnail: "/Screenshot 2026-05-23 000122.png",
     video: "/804- Abx - Dr.Sara - Nma Life -هوس مشروبات الطاقة وتأثيرها على الأسنان  Aren(1).mp4"
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     category: 'Brand',
     description: 'Vertical format music video optimized for Instagram Reels with trend-driven editing and effects.',
     tags: ['Reels', 'Effects', 'Music Sync', 'Storyboarding & Scripting', 'Camera Operation', 'Lighting & Audio Setup', 'Direction', 'Color Grading', 'Video Editing'],
-    thumbnail: '/Ezr3ly1.mp4#t=1',
+    thumbnail:  "/ezr3ly.png",
     video: 'Ezr3ly1.mp4' 
   },
   {
@@ -113,11 +113,11 @@ function ProjectCard({ project, onClick }) {
       onClick={() => onClick(project)}
       className="group relative cursor-pointer rounded-xl overflow-hidden bg-card border border-border/50 hover:border-primary/30 transition-all duration-500"
     >
-      <div className="relative aspect-video overflow-hidden bg-black">
+      <div className="relative aspect-video overflow-hidden bg-black flex items-center justify-center">
         {isVideoThumbnail ? (
           <video 
             src={project.thumbnail} 
-            className="w-full h-full object-contian transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             muted
             playsInline
             preload="metadata"
@@ -126,7 +126,7 @@ function ProjectCard({ project, onClick }) {
           <img 
             src={project.thumbnail} 
             alt={project.title}
-            className="w-full h-full object-contian transition-transform duration-700 group-hover:scale-110"
+            className="w-50 h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
         )}
         

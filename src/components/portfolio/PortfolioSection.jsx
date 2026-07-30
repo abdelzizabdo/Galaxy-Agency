@@ -14,7 +14,7 @@ const projects = [
     description: 'Transforming medical raw footage into a highly professional visual experience. This project balances precise medical content with engaging post-production techniques. I integrated explanatory animations, relevant imagery, and smooth, innovative transitions, combined with cinematic color correction to deliver a polished, clear, and impactful healthcare video.',
     tags: ['Color Grading', 'Transitions', 'Sound Design', 'Sound effect'],
     thumbnail: "/Screenshot 2026-05-23 000122.png",
-    video: "/804- Abx - Dr.Sara - Nma Life -هوس مشروبات الطاقة وتأثيرها على الأسنان  Aren(1).mp4"
+    video: "/804- Abx - Dr.Sara.webm"
   },
   {
     id: 2,
